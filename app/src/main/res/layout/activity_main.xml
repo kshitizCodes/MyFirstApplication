@@ -23,37 +23,38 @@
 
     <!--Sex Selector Start-->
     <androidx.cardview.widget.CardView
-        android:id="@+id/female"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardCornerRadius="25dp"
-        app:cardBackgroundColor="@color/card_bg_color"
-        app:cardUseCompatPadding="true"
-        android:layout_alignEnd="@id/verticalReferenceLine">
-        <!-- Male button -->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Male"
-            android:textSize="25sp"
-            android:background="" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
         android:id="@+id/male"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="25dp"
         app:cardBackgroundColor="@color/card_bg_color"
         app:cardUseCompatPadding="true"
+        android:layout_alignEnd="@id/verticalReferenceLine"
+        android:text="Male"
+        android:textAlignment="center">
+        <!-- Male button -->
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:text="Male"-->
+        <!--            android:textSize="25sp" />-->
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/female"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="25dp"
+        app:cardBackgroundColor="@color/card_bg_color"
+        app:cardUseCompatPadding="true"
+        android:text="Female"
         android:layout_alignStart="@id/verticalReferenceLine">
         <!-- Female button -->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Female"
-            android:textSize="25sp"
-            android:background="" />
+        <!--        <Button-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:text="Female"-->
+        <!--            android:textSize="25sp" />-->
     </androidx.cardview.widget.CardView>
     <!--Sex Selector End-->
 
@@ -95,7 +96,7 @@
                     android:id="@+id/heightValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="70"
+                    android:text="120"
                     android:textSize="50sp"
                     android:textColor="#FFF" />
 
@@ -113,7 +114,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
-                android:layout_marginTop="20dp" />
+                android:layout_marginTop="20dp"
+                android:min="120"
+                android:max="300"
+                android:id="@+id/HeightSeekBar" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
     <!--    Height Card End -->
@@ -125,7 +129,8 @@
         app:cardBackgroundColor="@color/card_bg_color"
         android:layout_alignEnd="@id/verticalReferenceLine"
         android:layout_below="@id/heightCard"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="70dp"
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -173,12 +178,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/WeightAdd" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:id="@+id/WeightLess"
                     android:text="Less" />
             </RelativeLayout>
         </RelativeLayout>
@@ -192,7 +199,8 @@
         app:cardBackgroundColor="@color/card_bg_color"
         android:layout_alignStart="@id/verticalReferenceLine"
         android:layout_below="@id/heightCard"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="70dp"
+        app:cardUseCompatPadding="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -240,13 +248,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/AgeAdd" />
+                />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:text="Less" />
+                    android:text="Less"
+                    android:id="@+id/AgeLess" />
+                />
             </RelativeLayout>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -255,5 +267,6 @@
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate" />
+        android:text="Calculate"
+        android:id="@+id/Calculate" />
 </RelativeLayout>
